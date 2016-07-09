@@ -1,5 +1,6 @@
 <?php
 	require_once('auth.php');
+	error_reporting(E_ERROR | E_PARSE);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,91 +51,10 @@
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
+                
+               
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu message-dropdown">
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading">
-                                            <strong>John Smith</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading">
-                                            <strong>John Smith</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading">
-                                            <strong>John Smith</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-footer">
-                            <a href="#">Read All New Messages</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu alert-dropdown">
-                        <li>
-                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">View All</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_SESSION[FIRST_NAME]." ".$_SESSION[LAST_NAME];?> <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_SESSION['SESS_FNAME']." ".$_SESSION['SESS_LNAME'];?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="../rangde/index.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
@@ -157,6 +77,9 @@
                     <li class="active">
                         <a  href="recommended.php"><i class="fa fa-fw fa-edit"></i>Recommended Causes For You</a>
                     </li>
+					 <li>
+                        <a href="myscore.php"><i class="fa fa-fw fa-table"></i>My Score</a>
+                    </li>
                    
                 </ul>
             </div>
@@ -173,9 +96,9 @@
                     <div class="col-sm-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i>Link To Add Friends</h3>
+                                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i>Share with friends</h3>
                             </div>
-             <div class="panel-body">
+           
                                 
              
 				
@@ -186,9 +109,9 @@
                                     
                                     require_once 'connection.php';
 				
-									$query = "SELECT * FROM preferences s JOIN causes c ON s.VAL = c.SECTION ";
+									$query = "SELECT * FROM investors";
 									
-									$res = mysqli_query($con,$query);
+									$res = mysql_query($query);
 									?>
 									<thead>
 										<th>ID</th>
@@ -200,7 +123,7 @@
 									
 									</thead>
 									<?php
-                                    while($row = mysqli_fetch_assoc($res)){
+                                    while($row = mysql_fetch_assoc($res)){
                                         ?>
                                         <tr>
                                             <td><?php echo $row[ID];?></td>
@@ -208,6 +131,28 @@
                                             <td><?php echo $row[FIRST_NAME];?></td>
                                             <td><?php echo $row[LAST_NAME];?></td>
                                             <td><a target="_blank"><?php echo $row[FACEBOOK_URL];?></a></td>
+											<?php
+											if(!empty($row[FACEBOOK_URL])){
+											
+												require_once 'connection.php';
+												$sqls = "SELECT * FROM score WHERE ID=$_SESSION[SESS_MEMBER_ID]";
+												
+												$re = mysql_query($sqls);
+												
+												if(mysql_num_rows($re)<=0){
+													
+													$sql = "INSERT INTO score VALUES($_SESSION[SESS_MEMBER_ID],30)";
+													$ree = mysql_query($sql);
+												}
+												else{
+													
+													$sql = "UPDATE score SET SCORE=SCORE+30 WHERE ID=$_SESSION[SESS_MEMBER_ID]";
+													$res=mysql_query($sql);
+												}
+											
+											
+											}
+											?>
                                         </tr>
                                         <?php
                                     }

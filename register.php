@@ -4,7 +4,7 @@
     error_reporting(E_ALL);
     
     session_start();
-    require_once('connection.php');
+    
     
     //Array to store validation errors
 	$errmsg_arr = array();
@@ -25,6 +25,7 @@
 	}
     
     //If there are input validations, redirect back to the login form
+	echo $errflag;
 	if($errflag) {
 		$_SESSION['ERRMSG_ARR'] = $errmsg_arr;
 		session_write_close();
@@ -32,9 +33,11 @@
 		exit();
 	}
     
-    
+    require_once('connection.php');
+	echo $username;
     $qry = "SELECT * FROM investors WHERE USERNAME='$username'";
-    $result=mysql_query($qry);
+	echo $qry;
+    $result=mysqli_query($con,$qry);
     
     if($result) {
 		if(mysql_num_rows($result) > 0) {
@@ -53,7 +56,10 @@
         else {
 			//New User
              $qry = "select * from investors where PHONE='$_POST[phone]'";
-             $result=mysql_query($qry);
+			 echo $_POST[phone];
+			 echo $qry;
+			 
+             $result=mysqli_query($con,$qry);
              if($result){
                  if(mysql_num_rows($result)>0){
                       $errmsg_arr[] = 'Phone number already registered';
@@ -67,7 +73,7 @@
                  else{
                      
                      $qry = "INSERT INTO investors(USERNAME,PASSWRD,FIRST_NAME,LAST_NAME,ADDRESS,PHONE) VALUES('$_POST[username]','$password','$_POST[fname]','$_POST[lname]','$_POST[address]','$_POST[phone]')";
-                     $result=mysql_query($qry);
+                     $result=mysqli_query($con,$qry);
                      
                      //session_regenerate_id();
 			         $member = mysql_fetch_assoc($result);
