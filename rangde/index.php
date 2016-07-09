@@ -15,9 +15,11 @@
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
 	<style>
-	 .counter 
+	<!-- .counter 
 	 {
-		 background-image:url("images/services/bg_services.jpg");
+		 background-image:url("images/bg.jpg");
+		 <!---webkit-filter: blur(5px);
+    filter: blur(5px);-->
 	 }
 	 </style>
     <!--[if lt IE 9]>
@@ -161,13 +163,15 @@ function myFunction() {
     </section><!--/#main-slider-->
 	<section id="count">
 <div class="counter" align="center">
+ <div class="item active" style="background-image: url(images/bg.jpg);background-repeat:no repeat;background-size:cover;">
 <div class="center wow fadeInDown" >
 <br>
 <br>
 <br>
-	<h1 style= "font-size:60px">No. Of Social Investors : </h1><input type="number">
-	<h1 style= "font-size:60px">No. Of Loans Disbursed : </h1><input type="number">
-	<h1 style= "font-size:60px">No. Of States Covered : </h1><input type="number">
+	<h1 style= "font-size:60px; color:black">No. Of Social Investors Online : </h1><input type="number">
+	<h1 style= "font-size:60px; color:black">No. Of Loans Disbursed : </h1><input type="number">
+	<h1 style= "font-size:60px; color:black">No. Of States Covered : </h1><input type="number">
+	</div>
 	</div>
 	</div>
 	</section>
