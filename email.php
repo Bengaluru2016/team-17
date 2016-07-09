@@ -3,7 +3,7 @@ include 'connection.php'
 $sql="select email1,date1 from new_users where sysdate() - date1>30";
 
     while($row = $result->fetch_assoc()) {
-$to = $row['email'].'@example.com';
+$to = $row['email'];
 $subject = 'Rangde is waiting for you'; 
 $random_hash = md5(date('r', time())); 
 $headers = "From: webmaster@example.com\r\nReply-To: webmaster@example.com";
