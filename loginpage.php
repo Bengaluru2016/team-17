@@ -6,7 +6,7 @@ error_reporting(E_ERROR | E_PARSE);
     <head>
         <title>Rang De -Login</title>
          <!-- Bootstrap Core CSS -->
-    <link href="startbootstrap-sb-admin-1.0.4/css/bootstrap.min.css" rel="stylesheet">
+   <link href="startbootstrap-sb-admin-1.0.4/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="startbootstrap-sb-admin-1.0.4/css/sb-admin.css" rel="stylesheet">
@@ -33,7 +33,8 @@ error_reporting(E_ERROR | E_PARSE);
                         <div class="col-sm-10">
                           <input type="text" class="form-control" id="inputEmail3" placeholder="Username" name="username">
                           <span class="error">
-                                  <?php                             
+                                  <?php   
+								  
                                         if(isset($_GET[userErr]))
                                             echo "The Username is incorrect!";
                                    ?>       

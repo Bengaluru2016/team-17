@@ -1,7 +1,7 @@
 <?php
 	//Start session
-    //ini_set('display_errors', 1);
-    //error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
 	session_start();
     
 	//Include database connection details
@@ -35,25 +35,31 @@
 		$errmsg_arr[] = 'Password missing';
 		$errflag = true;
 	}
- 
+	//echo $errflag;
 	//If there are input validations, redirect back to the login form
 	if($errflag) {
-		$_SESSION['ERRMSG_ARR'] = $errmsg_arr;
+		/*$_SESSION['ERRMSG_ARR'] = $errmsg_arr;
 		session_write_close();
-		header("location: ../rangde/loginpage.php");
-		exit();
+		
+		header("Location: ../rangde/loginpage.php");
+		exit();*/
 	}
  
 	//Create query
 	$qry="SELECT * FROM investors WHERE USERNAME='$username' AND PASSWRD='$password'";
-	$result=mysql_query($qry);
+	//echo $username;
+	//echo $password;
+	//echo $qry;
+	$result=mysqli_query($con,$qry);
  
 	//Check whether the query was successful or not
-	if($result) {
-		if(mysql_num_rows($result) > 0) {
+	//echo $result;
+	if($result){
+		
+		if(mysqli_num_rows($result) > 0) {
 			//Login Successful
 			session_regenerate_id();
-			$member = mysql_fetch_assoc($result);
+			$member = mysqli_fetch_assoc($result);
 			$_SESSION['SESS_MEMBER_ID'] = $member['ID'];
 			$_SESSION['SESS_USERNAME'] = $member['USERNAME'];
 			$_SESSION['SESS_PASSWORD'] = $member['PASSWRD'];
@@ -64,8 +70,9 @@
            
 			session_write_close();
             if(isset($_SESSION['SESS_MEMBER_ID'])){
+				//echo "im here";
 				
-                header('location: ../rangde/dashboard.php');
+                header('Location: ../rangde/dashboard.php');
 			    exit();
             }
             
@@ -77,7 +84,8 @@
 			if($errflag) {
 				$_SESSION['ERRMSG_ARR'] = $errmsg_arr;
 				session_write_close();
-				header("location: ../rangde/loginpage.php");
+				
+				header('Location: ../rangde/loginpage.php');
 				exit();
 			}
 		}

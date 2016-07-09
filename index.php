@@ -1,3 +1,8 @@
+<?php 
+	if(isset($_SESSION)){
+		session_destroy();
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,12 +19,6 @@
     <link href="css/prettyPhoto.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
-	<style>
-	 .counter 
-	 {
-		 background-image:url("images/services/bg_services.jpg");
-	 }
-	 </style>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -28,8 +27,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">-->
-</head>
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
 
 <body class="homepage" onunload="myFunction()">
 
@@ -48,8 +47,7 @@ function myFunction() {
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
-                    
-     
+                        
                     </div>
                     <!--<div class="col-sm-6 col-xs-8">
                        <div class="social">
@@ -85,9 +83,10 @@ function myFunction() {
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.php">Home</a></li>
-                        <!--<li><a href="about-us.html">About Us</a></li>-->                             
-                                <li><a href="topinvest.html">Top Investors</a></li>
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                                <li><a href="blog-item.html">Blog Single</a></li>
+                                <li><a href="pricing.html">Pricing</a></li>
                                 <li><a href="registerpage.php">Join Us</a></li>
                                 <li><a href="loginpage.php">Login</a></li>
                             </ul>
@@ -159,22 +158,10 @@ function myFunction() {
             <i class="fa fa-chevron-right"></i>
         </a>
     </section><!--/#main-slider-->
-	<section id="count">
-<div class="counter" align="center">
-<div class="center wow fadeInDown" >
-<br>
-<br>
-<br>
-	<h1 style= "font-size:60px">No. Of Social Investors : </h1><input type="number">
-	<h1 style= "font-size:60px">No. Of Loans Disbursed : </h1><input type="number">
-	<h1 style= "font-size:60px">No. Of States Covered : </h1><input type="number">
-	</div>
-	</div>
-	</section>
     <section id="recent-works">
         <div class="container">
             <div class="center wow fadeInDown">
-                <h2>CHARTS</h2>
+                <h2>Charts</h2>
                 <!--<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>-->
             </div>
 
