@@ -1,7 +1,7 @@
 <?php
     
     include "connection.php";
-    $sql = "select cause_title,count(borrower_id) as count1 from causes group by cause_title";
+    $sql = "select cause_title,count(i_id) as count2 from causes group by cause_title";
     $result = $conn->query($sql);
     session_destroy();
 ?>
@@ -12,7 +12,7 @@
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Cause', 'Borrower'],
+          ['Cause', 'Investors'],
         <?php
             //$num = array(3,4);
             for($i=0;$i<$result->num_rows-1;$i++){
@@ -25,7 +25,7 @@
         ]);
 
         var options = {
-          title: 'Statistical data of in investments in each '
+          title: 'Statistical data of Investors '
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -44,5 +44,5 @@ $result = $conn->query($sql);
         <?php
             }
         ?>
-        <div id="piechart" class="col-xs-6 col-sm-6 col-md-6" style="width: 900px; height: 500px;"></div>
+        <div id="piechart" class="col-xs-6 col-sm-6 col-md-6 style="width: 900px; height: 500px;"></div>
 </body>
