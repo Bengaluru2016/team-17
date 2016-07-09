@@ -1,8 +1,3 @@
-<?php 
-	if(isset($_SESSION)){
-		session_destroy();
-	}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +42,8 @@ function myFunction() {
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
-                        
+                    
+     
                     </div>
                     <!--<div class="col-sm-6 col-xs-8">
                        <div class="social">
@@ -158,6 +154,10 @@ function myFunction() {
             <i class="fa fa-chevron-right"></i>
         </a>
     </section><!--/#main-slider-->
+<div class="container" align="center">
+	<h2>No. Of Social Investors : </h2><input type="number">
+	<h2>No. Of Loans Disbursed : </h2><input type="number">
+	</div>
     <section id="recent-works">
         <div class="container">
             <div class="center wow fadeInDown">
