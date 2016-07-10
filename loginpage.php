@@ -5,14 +5,6 @@ error_reporting(E_ERROR | E_PARSE);
 <html>
     <head>
         <title>Rang De -Login</title>
-         <!-- Bootstrap Core CSS -->
-   <link href="startbootstrap-sb-admin-1.0.4/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="startbootstrap-sb-admin-1.0.4/css/sb-admin.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="startbootstrap-sb-admin-1.0.4font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         
@@ -22,12 +14,25 @@ error_reporting(E_ERROR | E_PARSE);
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-        
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     </head>
 <body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">RangDe</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.php">Home</a></li>
+      <li><a href="topinvest.html">Top Investors</a></li> 
+      <li><a href="registerpage.php">Join Us</a></li>
+      <li><a href="loginpage.php">Login</a></li>
+    </ul>
+  </div>
+</nav>
 <form class="form-horizontal" action="../rangde/login.php" method="POST">
                     <fieldset>
-                        <legend>LOGIN</legend>
+                        <legend align="center">LOGIN</legend>
                       <div class="form-group">
                         <label for="inputName3" class="col-sm-2 control-label">Username</label>
                         <div class="col-sm-10">
