@@ -29,7 +29,30 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
 
+        var data = google.visualization.arrayToDataTable([
+          ['Sectors', 'Investors'],
+          ['Education',     3],
+          ['Sanitary',      2],
+          ['Agriculture',  2],
+          ['Vacation', 1],
+          ['Business',    7]
+        ]);
+
+        var options = {
+          title: 'Statistical Data of Investors'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
 <body class="homepage" onunload="myFunction()">
 
 <script>
@@ -164,9 +187,9 @@ function myFunction() {
             </div>
 
             <div class="row">
-                <div class="col-xs-12 col-sm-4 col-md-3">
+                <!--<div class="col-xs-12 col-sm-4 col-md-3">
                     <div class="recent-work-wrap">
-                        <img class="img-responsive" src="images/portfolio/recent/item1.png" alt="">
+                        <im
                         <div class="overlay">
                             <div class="recent-work-inner">
                                 <h3><a href="#">Business theme</a> </h3>
@@ -266,7 +289,14 @@ function myFunction() {
                             </div> 
                         </div>
                     </div>
-                </div>   
+                </div>-->
+             
+    
+  
+ 
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+ 
+
             </div><!--/.row-->
         </div><!--/.container-->
     </section><!--/#recent-works-->
