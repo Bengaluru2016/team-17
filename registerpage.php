@@ -6,23 +6,27 @@ error_reporting(E_ERROR | E_PARSE);
      <head>
         <title>Rang De - Registration</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Bootstrap Core CSS -->
-    <link href="startbootstrap-sb-admin-1.0.4/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="startbootstrap-sb-admin-1.0.4/css/sb-admin.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="startbootstrap-sb-admin-1.0.4font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        
-        
-    </head>
+       <link rel="stylesheet"href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        </head>
     <body>
+        <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">RangDe</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.php">Home</a></li>
+      <li><a href="topinvest.html">Top Investors</a></li> 
+      <li><a href="registerpage.php">Join Us</a></li>
+      <li><a href="loginpage.php">Login</a></li>
+    </ul>
+  </div>
+</nav>
         <div class="row">
             <div class="col-md-8">
                 <form class="form-horizontal" action="../rangde/register.php" method="POST">
                     <fieldset>
-                        <legend>REGISTER</legend>
+                        <legend align="center">REGISTER</legend>
                       <div class="form-group">
                         <label for="inputName3" class="col-sm-2 control-label">Username</label>
                         <div class="col-sm-10">
