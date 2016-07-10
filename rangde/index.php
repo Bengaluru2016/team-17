@@ -1,3 +1,8 @@
+<?php 
+	if(isset($_SESSION)){
+		session_destroy();
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +27,47 @@
     filter: blur(5px);-->
 	 }
 	 </style>
+	 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+
+google.charts.load("current", {packages:["corechart"]});
+
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+var data = google.visualization.arrayToDataTable([
+
+['Task', 'Hours per Day'],
+
+['Dairy', 11],
+
+['Clothing', 2],
+
+['Fishing', 2],
+
+['Agriculture', 2],
+
+['Education', 7]
+
+]);
+
+var options = {
+
+title: 'Percentage of Investors',
+
+pieHole: 0.4,
+
+};
+
+var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+
+chart.draw(data, options);
+
+}
+
+</script>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -33,7 +79,7 @@
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">-->
 </head>
 
-<body class="homepage" onunload="myFunction()">
+<body class="homepage" onload="myFunction()">
 
 <script>
 function myFunction() {
@@ -116,7 +162,7 @@ function myFunction() {
                             <div class="col-sm-6">
                                 <div class="carousel-content">
                                     <h1 class="animation animated-item-1">Invest. In people. In potential. In pride. <br/>Experience Social Investing with Rang De.</h1>
-                                    <!--<a class="btn-slide animation animated-item-3" href="#">Read More</a>-->
+                                    <a class="btn-slide animation animated-item-3" href="#">Read More</a>
                                 </div>
                             </div>
 
@@ -131,7 +177,7 @@ function myFunction() {
                             <div class="col-sm-6">
                                 <div class="carousel-content">
                                     <h1 class="animation animated-item-1">Invest. In people. In potential. In pride. <br/>Experience Social Investing with Rang De.</h1>                                   
-                                    <!--<a class="btn-slide animation animated-item-3" href="#">Read More</a>-->
+                                    <a class="btn-slide animation animated-item-3" href="#">Read More</a>
                                 </div>
                             </div>
 
@@ -145,7 +191,7 @@ function myFunction() {
                             <div class="col-sm-6">
                                 <div class="carousel-content">
                                     <h1 class="animation animated-item-1">Invest. In people. In potential. In pride. <br/>Experience Social Investing with Rang De.</h1>
-                                   <!-- <a class="btn-slide animation animated-item-3" href="#">Read More</a>-->
+                                    <a class="btn-slide animation animated-item-3" href="#">Read More</a>
                                 </div>
                             </div>
                            
@@ -161,29 +207,11 @@ function myFunction() {
             <i class="fa fa-chevron-right"></i>
         </a>
     </section><!--/#main-slider-->
-	<!--<section id="count">
-<div class="counter" align="center">
- <div class="item active" style="background-image: url(images/bg.jpg);background-repeat:no repeat;background-size:cover;webkit-filter: blur(5px);
-    filter: blur(10px);">
-<!--<div class="center wow fadeInDown" >
-<br>
-<br>
-<br>
-<br>
-	<h1 style= "font-size:60px; color:black">No. Of Social<br>
-	<br>
-	Investors Online : </h1><input type="number">
-	<br>
-	<!--<h1 style= "font-size:60px; color:black">No. Of Loans Disbursed : </h1><input type="number">-->
-	<!--<h1 style= "font-size:60px; color:black">No. Of States Covered : </h1><input type="number">-->
-	</div>
-	</div>
-	</div>
-	</section>
+
     <section id="recent-works">
         <div class="container">
             <div class="center wow fadeInDown">
-                <h2>CHARTS</h2>
+                <h2>CATALYSTS.</h2>
                 <!--<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>-->
             </div>
 
@@ -294,6 +322,42 @@ function myFunction() {
             </div><!--/.row-->
         </div><!--/.container-->
     </section><!--/#recent-works-->
+	
+	<section id="recent­works" >
+
+<h2 align="center">Charts</h2>
+
+
+
+<div class="row">
+
+<div class="col­xs­12 col­sm­4 col­md­3">
+
+<div class="recent­work­wrap" style="margin-left:auto;margin-right:auto">
+
+<div id="donutchart" style="width: 900px; height: 500px;"></div>
+
+
+
+<div class="recent­work­inner">
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 
     <section id="services" class="service-item">
 	   <div class="container">
@@ -332,12 +396,11 @@ function myFunction() {
             </div><!--/.row-->
         </div><!--/.container-->
     </section><!--/#services-->
-
+<br><br><br>
    <!-- <section id="middle">
         <div class="container">
             <div class="row">
                
-
                 <div class="col-sm-6 wow fadeInDown">
                     <div class="accordion">
                         <h2>Why People like us?</h2>
@@ -351,7 +414,6 @@ function myFunction() {
                                 </a>
                               </h3>
                             </div>
-
                             <div id="collapseOne1" class="panel-collapse collapse in">
                               <div class="panel-body">
                                   <div class="media accordion-inner">
@@ -366,7 +428,6 @@ function myFunction() {
                               </div>
                             </div>
                           </div>
-
                           <div class="panel panel-default">
                             <div class="panel-heading">
                               <h3 class="panel-title">
@@ -382,7 +443,6 @@ function myFunction() {
                               </div>
                             </div>
                           </div>
-
                           <div class="panel panel-default">
                             <div class="panel-heading">
                               <h3 class="panel-title">
@@ -398,7 +458,6 @@ function myFunction() {
                               </div>
                             </div>
                           </div>
-
                           <div class="panel panel-default">
                             <div class="panel-heading">
                               <h3 class="panel-title">
@@ -427,7 +486,7 @@ function myFunction() {
     <section id="partner">
         <div class="container">
             <div class="center wow fadeInDown">
-                <h2>Our Top Investors!</h2>
+                <h2>Our Top partners!</h2>
                <!-- <p class="lead">We're a not-for-profit organization committed to fighting poverty by providing access to affordable micro loans to underserved communities in India.</p>-->
             </div>    
 
@@ -447,6 +506,10 @@ function myFunction() {
         <div class="container">
             <div class="row">
                 <div class="col-sm-8">
+                    <div class="media contact-info wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="pull-left">
+                            <i class="fa fa-phone"></i>
+                        </div>
                         <div class="media-body">
                             <h2>Have a question?</h2>
                             <p>You can call us at +91 80 41650037</p>
