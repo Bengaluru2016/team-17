@@ -116,7 +116,7 @@ function myFunction() {
                             <div class="col-sm-6">
                                 <div class="carousel-content">
                                     <h1 class="animation animated-item-1">Invest. In people. In potential. In pride. <br/>Experience Social Investing with Rang De.</h1>
-                                    <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                                    <!--<a class="btn-slide animation animated-item-3" href="#">Read More</a>-->
                                 </div>
                             </div>
 
@@ -131,7 +131,7 @@ function myFunction() {
                             <div class="col-sm-6">
                                 <div class="carousel-content">
                                     <h1 class="animation animated-item-1">Invest. In people. In potential. In pride. <br/>Experience Social Investing with Rang De.</h1>                                   
-                                    <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                                    <!--<a class="btn-slide animation animated-item-3" href="#">Read More</a>-->
                                 </div>
                             </div>
 
@@ -145,7 +145,7 @@ function myFunction() {
                             <div class="col-sm-6">
                                 <div class="carousel-content">
                                     <h1 class="animation animated-item-1">Invest. In people. In potential. In pride. <br/>Experience Social Investing with Rang De.</h1>
-                                    <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                                   <!-- <a class="btn-slide animation animated-item-3" href="#">Read More</a>-->
                                 </div>
                             </div>
                            
@@ -161,16 +161,21 @@ function myFunction() {
             <i class="fa fa-chevron-right"></i>
         </a>
     </section><!--/#main-slider-->
-	<section id="count">
+	<!--<section id="count">
 <div class="counter" align="center">
- <div class="item active" style="background-image: url(images/bg.jpg);background-repeat:no repeat;background-size:cover;">
-<div class="center wow fadeInDown" >
+ <div class="item active" style="background-image: url(images/bg.jpg);background-repeat:no repeat;background-size:cover;webkit-filter: blur(5px);
+    filter: blur(10px);">
+<!--<div class="center wow fadeInDown" >
 <br>
 <br>
 <br>
-	<h1 style= "font-size:60px; color:black">No. Of Social Investors Online : </h1><input type="number">
-	<h1 style= "font-size:60px; color:black">No. Of Loans Disbursed : </h1><input type="number">
-	<h1 style= "font-size:60px; color:black">No. Of States Covered : </h1><input type="number">
+<br>
+	<h1 style= "font-size:60px; color:black">No. Of Social<br>
+	<br>
+	Investors Online : </h1><input type="number">
+	<br>
+	<!--<h1 style= "font-size:60px; color:black">No. Of Loans Disbursed : </h1><input type="number">-->
+	<!--<h1 style= "font-size:60px; color:black">No. Of States Covered : </h1><input type="number">-->
 	</div>
 	</div>
 	</div>
@@ -422,7 +427,7 @@ function myFunction() {
     <section id="partner">
         <div class="container">
             <div class="center wow fadeInDown">
-                <h2>Our Top partners!</h2>
+                <h2>Our Top Investors!</h2>
                <!-- <p class="lead">We're a not-for-profit organization committed to fighting poverty by providing access to affordable micro loans to underserved communities in India.</p>-->
             </div>    
 
@@ -442,10 +447,6 @@ function myFunction() {
         <div class="container">
             <div class="row">
                 <div class="col-sm-8">
-                    <div class="media contact-info wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="pull-left">
-                            <i class="fa fa-phone"></i>
-                        </div>
                         <div class="media-body">
                             <h2>Have a question?</h2>
                             <p>You can call us at +91 80 41650037</p>
