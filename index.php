@@ -179,7 +179,7 @@ function myFunction() {
                             <div class="col-sm-6">
                                 <div class="carousel-content">
                                     <h1 class="animation animated-item-1">Invest. In people. In potential. In pride. <br/>Experience Social Investing with Rang De.</h1>
-                                    <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                                   <!-- <a class="btn-slide animation animated-item-3" href="#">Read More</a> -->
                                 </div>
                             </div>
 
@@ -194,7 +194,7 @@ function myFunction() {
                             <div class="col-sm-6">
                                 <div class="carousel-content">
                                     <h1 class="animation animated-item-1">Invest. In people. In potential. In pride. <br/>Experience Social Investing with Rang De.</h1>                                   
-                                    <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                                    <!--<a class="btn-slide animation animated-item-3" href="#">Read More</a> -->
                                 </div>
                             </div>
 
@@ -208,7 +208,7 @@ function myFunction() {
                             <div class="col-sm-6">
                                 <div class="carousel-content">
                                     <h1 class="animation animated-item-1">Invest. In people. In potential. In pride. <br/>Experience Social Investing with Rang De.</h1>
-                                    <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                                    <!--<a class="btn-slide animation animated-item-3" href="#">Read More</a>-->
                                 </div>
                             </div>
                            
