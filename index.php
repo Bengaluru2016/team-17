@@ -224,14 +224,7 @@ function myFunction() {
             <i class="fa fa-chevron-right"></i>
         </a>
     </section><!--/#main-slider-->
-	<section>
-<div id="container" align="center" class="con">
-<br>
-<h2 style="color:white">No. Of Social Investors</h2><input type="number">
-<h2 style="color:white">No. Of Loans </h2><input type="number">
-<h2 style="color:white">No. Of States Covered</h2><input type="number">
-</div>
-</section>	
+	
     <section id="recent-works">
         
             
