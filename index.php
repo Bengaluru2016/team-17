@@ -83,10 +83,8 @@ function myFunction() {
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="blog-item.html">Blog Single</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
+                        <li class="active"><a href="index.php">Home</a></li>
+                                <li><a href="topinvest.html">Top Investors</a></li>
                                 <li><a href="registerpage.php">Join Us</a></li>
                                 <li><a href="loginpage.php">Login</a></li>
                             </ul>
